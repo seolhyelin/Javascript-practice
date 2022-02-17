@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var value = 1;
+
+      const obj = {
+        value: 100,
+        foo() {
+          //this 바인딩(obj)를 변수 that에 할당
+          const that = this;
+
+          //콜백함수 내부에서 this대신 that을 참조한다
+          setTimeout(function () {
+            console.log(that.value);
+          }, 100);
+        },
+      };
+
+      obj.foo();
+    </script>
+  </body>
+</html>
