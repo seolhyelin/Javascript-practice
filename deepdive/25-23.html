@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        //생성자
+        constructor(name) {
+          //인스턴스 생성 및 초기화
+          this.name = name;
+        }
+
+        //프로토타입 메서드
+        sayHi() {
+          console.log(`hi my name is ${this.name}`);
+        }
+      }
+
+      const me = new Person("Lee");
+      me.sayHi();
+    </script>
+  </body>
+</html>
