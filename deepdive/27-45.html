@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const foods = ["apple", "banana", "orange"];
+
+      //foods에 오렌지 요소가 존재하는지 확인
+      if (foods.indexOf("orange") === -1) {
+        foods.push("orange");
+      }
+
+      //es7에 도입된 includes를 사용하면 가독성이 더 좋다
+      if (!foods.includes("orange")) {
+        foods.push("orange");
+      }
+    </script>
+  </body>
+</html>
