@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //this는 어디서든지 참조가능
+      //전역에서는 window를 가르킨다
+      console.log(this); //window
+
+      function square(number) {
+        //일반함수 내부에서 this는 전역객체 window를 가르킨다
+        console.log(this);
+        return number * number;
+      }
+      square(2);
+
+      const person = {
+        name: "Lee",
+        getName() {
+          //메서드 내부에서 this는 메서드를 호출한 객체를 가르킨다.
+          console.log(this); // {name:"Lee", getName: f}
+          return this.name;
+        },
+      };
+      console.log(person.getName());
+
+      function Person(name) {
+        this.name = name;
+        //생성자 함수 내부에서 this는 생성자 함수가 생성할 인스턴스를 가르킨다.
+        console.log(this); //Person {name:'Lee'}
+      }
+      const me = new Person("Seol");
+    </script>
+  </body>
+</html>
